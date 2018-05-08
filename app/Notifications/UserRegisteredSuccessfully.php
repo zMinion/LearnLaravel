@@ -49,7 +49,7 @@ class UserRegisteredSuccessfully extends Notification
         /** @var User $user */
         $user = $this->user;
         return (new MailMessage)
-            ->from(env('ADMIN_MAIL'))
+            ->from(env('NOREPLY_MAIL'))
             ->subject('Successfully created new account')
             ->greeting(sprintf('Hello %s', $user->name))
             ->line('You have successfully registered to our system. Please activate your account.')
