@@ -20,3 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/verify-user/{code}', 'Auth\RegisterController@activateUser')->name('activate.user');
+
+Route::group(['middleware' => 'web'], function () {
+	Route::get('/profile', 'ProfileController@editprofile')->name('profile');
+	Route::post('/profile', 'ProfileController@saveprofile')->name('profile');
+});
