@@ -21,6 +21,7 @@ class CreateProfilesTable extends Migration
             
             $table->string('full_name')->nullable();
             $table->tinyInteger('gender')->default(0);
+            $table->string('avatar')->default('avatar.jpg');            
             $table->string('place_of_birth')->nullable(); 
             $table->tinyInteger('marital_status')->default(0);
             $table->text('address')->nullable();
