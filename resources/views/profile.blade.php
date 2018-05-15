@@ -30,12 +30,12 @@
                                 <label class="control-label control-label-left">Gender:</label>
                                 <div class="controls">
                                     <label class="custom-control custom-radio">
-                                      <input id="radio1" name="gender" type="radio" value="0" {{ $profile->gender == 0 ? 'checked': '' }} class="custom-control-input">
+                                      <input id="radio1" name="gender" type="radio" value="0" {{ @$profile->gender == 0 ? 'checked': '' }} class="custom-control-input">
                                       <span class="custom-control-indicator"></span>
                                       <span class="custom-control-description">Male</span>
                                     </label>
                                     <label class="custom-control custom-radio">
-                                      <input id="radio2" name="gender" type="radio" value="1" {{ $profile->gender == 1 ? 'checked': '' }} class="custom-control-input">
+                                      <input id="radio2" name="gender" type="radio" value="1" {{ @$profile->gender == 1 ? 'checked': '' }} class="custom-control-input">
                                       <span class="custom-control-indicator"></span>
                                       <span class="custom-control-description">Female</span>
                                     </label>   
@@ -53,8 +53,8 @@
                             <div class="form-group">
                                 <label class="control-label control-label-left" for="marital_status">Marital Status</label>
                                 <select id="marital_status" name="marital_status" class="form-control" data-role="select">
-                                  <option value="0" {{ $profile->marital_status == 0 ? 'selected': '' }}>Single</option>
-                                  <option value="1" {{ $profile->marital_status == 1 ? 'selected': '' }}>Married</option>
+                                  <option value="0" {{ @$profile->marital_status == 0 ? 'selected': '' }}>Single</option>
+                                  <option value="1" {{ @$profile->marital_status == 1 ? 'selected': '' }}>Married</option>
                                 </select>
                             </div>
 
@@ -73,7 +73,7 @@
             </form>
         </div>
         <div class="col-md-4">    
-            <img src="{{ asset('img/thumbnail_images/'.$profile->avatar) }}" class="rounded-circle mx-auto d-block"/>
+            <img src="{{ asset('img/thumbnail_images/'.@$profile->avatar) }}" class="rounded-circle mx-auto d-block"/>
         </div>   
     </div>
 </div>

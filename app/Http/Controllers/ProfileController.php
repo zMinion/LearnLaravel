@@ -54,6 +54,7 @@ class ProfileController extends Controller
         $profile->marital_status = $data["marital_status"];
         $profile->address = $data["address"];
         $profile->save();
+        
     	return view('profile',["profile" => $profile]);
     }
 
@@ -61,6 +62,7 @@ class ProfileController extends Controller
     { 
         $user_id = Auth::user()->id;
         $profile = Profile::where("user_id",$user_id)->first();
+
     	return view('profile',["profile" => $profile]);
     }
 }
